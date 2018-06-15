@@ -1,0 +1,28 @@
+body {
+  background-color: #000;
+}
+.header-image {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.section {
+  padding: 52rem 0 52rem;
+  text-align: center;
+}
+
+.section-heading,
+.section-description {
+  margin-bottom: 1.2rem;
+}
+
+.categories {
+  background-image: url('../assets/cosmic.cable.limited.background.jpg');
+  background-size: cover;
+  color: #444;
+}
+
+.categories .section-description {
+  margin-bottom: 4rem;
+}
