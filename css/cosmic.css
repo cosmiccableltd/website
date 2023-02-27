@@ -26,3 +26,13 @@ body {
 .categories .section-description {
   margin-bottom: 4rem;
 }
+
+.footer {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  justify-content: space-between;
+}
