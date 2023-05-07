@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Cosmic Cable Ltd. - the fuck is that?">
+    <meta name="author" content="Cosmic Cable Ltd.">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Cosmic Cable Ltd - the fuck is that?</title>
+
+    <link href="css/normalize.css" type="text/css" rel="stylesheet" />
+    <link href="css/skeleton.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/cosmic.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class=text>
+    <h1 class=text-heading>About Cosmic Cable Ltd.</h1>
+    <p>
+    Comsic Cable is the lost cause of a post-bureaucratic telephone network provider mostly run by a crew of the best rogue technicians.<br/>
+Founded in 2016 as an alternative to the bad mobile network at Lärz, Germany it provides the most stylish telephone booths at both <a href="http://www.fusion-festival.de/">Fusion Festival</a> and <a href="https://www.attension-festival.de/en/festival">at.tension Festival</a>to connect participants. The telephone network is complemented by additional well-known Cosmic Cable services like the “Status Box” which provides asynchronous communication for guests as well as yearly changing entertainment options.
+    </p>
+    <h2 class=text-heading>Technical Setup</h2>
+    <p>
+    Within the Cosmic Cable network everything starts with a classic rotary dial telephone.
+Since building a whole analogue telephone network is very time consuming we use old Fritz Boxes to adapt the telephones to a TCP/IP based network.
+From then on the we use all kinds of standard networking gear. On the festival site we often use Ubiquiti Nanostations to establish radio links when no cable links are available.
+As a software PBX we run a <a href="https://www.asterisk.org/">Asterisk</a> setup which implements the service features that Cosmic Cable offers. The configuration is available <a href="https://github.com/cosmiccableltd">publicly on Github</a>.<br/>
+Another important part of attractive telephone booths is the  audiovisual ringing which combines the classical ringtone with some other effect like blinking lights or a flamethrower. To trigger such events we have used two different concepts over the years.<br/>
+First we had selfmade relay or other driver PCBs on the second analogue port on the Fritz Box. The Asterisk server then automatically called the corresponding number on specific events.
+Later on we developed the so called Mystery Box  which has a analogue telephone pass-through and a 12V output which is  constantly toggled as long as there’s ringing on the line. The box also provides connection terminals for 12V powered light as well  as a passive POE injector to drive the Nanostations.<br/>
+Although dial phones are awesome, there exist considerably constraints when using them. The most important is that with pulse dialing you can only dial once per call. The moment the  dialing is complete you can not dial  additional numbers, what prohibits  any kind of interactive menus.
+    </p>
+    </div>
+    <div class=footer>
+      <a href="https://github.com/cosmiccableltd">Cosmic Configuration on Github</a>
+      <a href="http://cosmic.cable.limited/index.html">About Cosmic Cable</a>
+      <a href="http://cosmic.cable.limited/intern/">Entrée technicienne</a>
+    </div>
+  </body>
+</html>

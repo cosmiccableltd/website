@@ -1,6 +1,22 @@
 body {
   background-color: #000;
 }
+
+.text-heading {
+  text-align: center
+  color: #FFF
+}
+.text {
+  margin: auto;
+  width: 54%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: space-between;
+  color: #AFAFAF;
+}
+
 .header-image {
   margin: 0px;
   padding: 0px;
