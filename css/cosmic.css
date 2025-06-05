@@ -1,68 +1,37 @@
-body {
-  background-color: #000;
-}
-
-.text-heading {
-  text-align: center;
-  color: #FFF
-}
-.text {
-  margin: auto;
-  width: 54%;
-  padding-top: 2%;
-  padding-bottom: 3%;
-  padding-left: 30px;
-  padding-right: 30px;
-  justify-content: space-between;
-  color: #AFAFAF;
-}
-
-.header-image {
-  margin: 0px;
-  padding: 0px;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-}
-
-.section {
-  padding: 52rem 0 52rem;
-  text-align: center;
-}
-
-.section-heading,
-.section-description {
-  margin-bottom: 1.2rem;
-}
-
-.categories {
-  background-image: url('../assets/cosmic.cable.limited.background.jpg');
+  height: 100%;
+  background-image: url('../assets/cosmic.cable.limited.2025.jpg');
   background-size: cover;
-  color: #444;
+  background-position: top;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
-.categories .section-description {
-  margin-bottom: 4rem;
-}
-
-/* .footer {
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
   display: flex;
-  margin: auto;
-  width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
-  text-align: center;
-  justify-content: space-between;
-} */
+  align-items: flex-end;
+  justify-content: center;
+}
+
 
 .footer {
-  background-color: #111;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
+  width: 100%;
 }
 
 .footer a {
   display: inline-block;
   margin: 0.5rem 1rem;
-  color: #ddd;
+  color: black;
+  font-weight: 500;
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s;
@@ -70,11 +39,11 @@ body {
 
 .footer a i {
   margin-right: 0.5rem;
-  color: #0af;
+  color: white;
 }
 
 .footer a:hover {
-  color: #0af;
+  color: white;
 }
 
 @media (max-width: 600px) {
@@ -82,4 +51,11 @@ body {
     display: block;
     margin: 0.5rem 0;
   }
+}
+
+.text-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
 }
