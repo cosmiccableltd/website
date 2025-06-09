@@ -27,6 +27,48 @@
         Founded in 2016 as an alternative to the bad mobile network at Lärz, Germany it provides the most stylish telephone booths at both <a href="http://www.fusion-festival.de/" target="_blank">Fusion Festival</a> and <a href="https://www.attension-festival.de/en/festival" target="_blank">at.tension Festival</a> to connect participants. The telephone network is complemented by additional well-known Cosmic Cable services like the “Status Box” which provides asynchronous communication for guests as well as yearly changing entertainment options.
       </p>
 
+     <h1 class="about-title">FUSION POSTER</h1>
+
+<div class="carousel-container">
+  <button class="nav-arrow left">‹</button>
+  <div class="carousel-track">
+    <div class="card" data-index="0">
+      <img src="assets/poster/2023.jpg" alt="Fusion 2023" data-year="2023" />
+    </div>
+    <div class="card" data-index="1">
+      <img src="assets/poster/2022.jpg" alt="Fusion 2022" data-year="2022" />
+    </div>
+    <div class="card" data-index="2">
+      <img src="assets/poster/2019.jpg" alt="Fusion 2019" data-year="2019" />
+    </div>
+    <div class="card" data-index="3">
+      <img src="assets/poster/2018.jpg" alt="Fusion 2018" data-year="2018" />
+    </div>
+    <div class="card" data-index="4">
+      <img src="assets/poster/2016.jpg" alt="Fusion 2016" data-year="2016" />
+    </div>
+  </div>
+  <button class="nav-arrow right">›</button>
+</div>
+
+<div class="poster-info">
+  <h2 class="poster-title">Fusion</h2>
+</div>
+
+<div class="dots">
+  <div class="dot active" data-index="0"></div>
+  <div class="dot" data-index="1"></div>
+  <div class="dot" data-index="2"></div>
+  <div class="dot" data-index="3"></div>
+  <div class="dot" data-index="4"></div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close-btn" id="closeBtn">&times;</span>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="Poster Großansicht" />
+</div>
+
       <h2>Technical Setup</h2>
       <p>
         Within the Cosmic Cable network everything starts with a classic rotary dial telephone. Since building a whole analogue telephone network is very time consuming we use old Fritz Boxes to adapt the telephones to a TCP/IP based network. From then on the we use all kinds of standard networking gear. On the festival site we often use Ubiquiti Nanostations to establish radio links when no cable links are available. As a software PBX we run a <a href="https://www.asterisk.org/" target="_blank">Asterisk</a> setup which implements the service features that Cosmic Cable offers. The configuration is available <a href="https://github.com/cosmiccableltd" target="_blank">publicly on Github</a>.<br/>
@@ -49,5 +91,115 @@
         <i class="fas fa-tools"></i> Entrée technicienne
       </a>
     </footer>
+   <script>
+  const teamMembers = [
+    { year: "2023" },
+    { year: "2022" },
+    { year: "2019" },
+    { year: "2018" },
+    { year: "2016" }
+  ];
+
+  const cards = document.querySelectorAll(".card");
+  const dots = document.querySelectorAll(".dot");
+  const posterTitle = document.querySelector(".poster-title");
+  const leftArrow = document.querySelector(".nav-arrow.left");
+  const rightArrow = document.querySelector(".nav-arrow.right");
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeBtn = document.getElementById("closeBtn");
+
+  let currentIndex = 0;
+  let isAnimating = false;
+
+  function updateCarousel(newIndex) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    currentIndex = (newIndex + cards.length) % cards.length;
+
+    cards.forEach((card, i) => {
+      const offset = (i - currentIndex + cards.length) % cards.length;
+      card.classList.remove(
+        "center", "left-1", "left-2", "right-1", "right-2", "hidden"
+      );
+
+      if (offset === 0) card.classList.add("center");
+      else if (offset === 1) card.classList.add("right-1");
+      else if (offset === 2) card.classList.add("right-2");
+      else if (offset === cards.length - 1) card.classList.add("left-1");
+      else if (offset === cards.length - 2) card.classList.add("left-2");
+      else card.classList.add("hidden");
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
+
+    posterTitle.textContent = "Fusion " + teamMembers[currentIndex].year;
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 800);
+  }
+
+  leftArrow.addEventListener("click", () => updateCarousel(currentIndex - 1));
+  rightArrow.addEventListener("click", () => updateCarousel(currentIndex + 1));
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => updateCarousel(i));
+  });
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const img = card.querySelector("img");
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+    lightboxImg.src = "";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+    }
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  document.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) updateCarousel(currentIndex + 1);
+      else updateCarousel(currentIndex - 1);
+    }
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") updateCarousel(currentIndex - 1);
+    else if (e.key === "ArrowRight") updateCarousel(currentIndex + 1);
+  });
+
+  updateCarousel(0);
+</script>
   </body>
 </html>
