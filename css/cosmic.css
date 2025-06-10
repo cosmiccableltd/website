@@ -23,9 +23,10 @@ body {
 }
 
 .logo {
-  max-width: 500px;
+  max-width: 450px;
   height: auto;
   display: block;
+
 }
 
 .content {
