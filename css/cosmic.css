@@ -19,7 +19,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-/* margin: 9rem auto 3rem auto; */
  margin: 8vh auto 4vh auto;
 }
 
@@ -31,15 +30,9 @@ body {
   height: auto;
   display: block;
   margin: 0 auto;
-  padding: 0 1rem; /* Schutz links und rechts */
+  padding: 0 1rem;
 }
 
-/* @media (max-width: 600px) {
- .logo {
-  width: 100%;
-  max-width: 400px;
-}
-} */
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .logo-wrapper {
@@ -59,15 +52,9 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 100px; /* Platz für fixierten Footer */
+  padding-bottom: 100px;
 }
 
-
-/* .footer {
-  padding: 1.5rem 1rem;
-  text-align: center;
-  width: 100%;
-} */
 
 .footer {
   position: fixed;

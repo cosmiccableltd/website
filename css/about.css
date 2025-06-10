@@ -269,3 +269,33 @@ a:hover {
   cursor: pointer;
   z-index: 1001;
 }
+
+.impressions-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.impression {
+  flex: 0 1 calc((100% - 2rem) / 3); /* 3 Elemente mit 1rem Gap = 2rem insgesamt */
+  max-width: calc((100% - 2rem) / 3);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.impression:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Optionale Anpassung für extrem kleine Screens */
+@media (max-width: 400px) {
+  .impression {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+}

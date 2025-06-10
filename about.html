@@ -74,6 +74,18 @@
   <img class="lightbox-img" id="lightboxImg" src="" alt="Poster Großansicht" />
 </div>
 
+<h2 class="about-title">IMPRESSIONS</h2>
+<div class="impressions-gallery">
+  <img src="assets/impressions/imression_1.jpg" alt="Impression 1" class="impression" />
+  <img src="assets/impressions/imression_2.jpg" alt="Impression 2" class="impression" />
+  <img src="assets/impressions/imression_3.jpg" alt="Impression 3" class="impression" />
+    <img src="assets/impressions/imression_4.jpg" alt="Impression 4" class="impression" />
+  <img src="assets/impressions/imression_5.jpg" alt="Impression 5" class="impression" />
+  <img src="assets/impressions/imression_6.jpg" alt="Impression 6" class="impression" />
+</div>
+
+
+
       <h2>Technical Setup</h2>
       <p>
         Within the Cosmic Cable network everything starts with a classic rotary dial telephone. Since building a whole analogue telephone network is very time consuming we use old Fritz Boxes to adapt the telephones to a TCP/IP based network. From then on the we use all kinds of standard networking gear. On the festival site we often use Ubiquiti Nanostations to establish radio links when no cable links are available. As a software PBX we run a <a href="https://www.asterisk.org/" target="_blank">Asterisk</a> setup which implements the service features that Cosmic Cable offers. The configuration is available <a href="https://github.com/cosmiccableltd" target="_blank">publicly on Github</a>.<br/>
@@ -172,6 +184,13 @@
       lightbox.style.display = "flex";
     });
   });
+
+  document.querySelectorAll(".impression").forEach((img) => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
+  });
+});
 
   // Lightbox schließen
   closeBtn.addEventListener("click", () => {
