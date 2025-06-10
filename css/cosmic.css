@@ -43,7 +43,7 @@ body {
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .logo-wrapper {
-    margin-top: 2vh;
+    margin-top: 3vh;
     margin-bottom: 10vh;
   }
 
