@@ -19,15 +19,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-margin: 9rem auto 3rem auto;
+/* margin: 9rem auto 3rem auto; */
+margin: 20% auto 5% auto;
 }
 
 .logo {
+  width: 100%;
   max-width: 400px;
   height: auto;
   display: block;
   margin: 0 auto;
-
+  padding: 0 1rem; /* Schutz links und rechts */
 }
 
 .content {
