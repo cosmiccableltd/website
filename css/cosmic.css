@@ -34,12 +34,12 @@ body {
   padding: 0 1rem; /* Schutz links und rechts */
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
  .logo {
   width: 100%;
   max-width: 400px;
 }
-}
+} */
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .logo-wrapper {
