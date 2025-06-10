@@ -33,6 +33,14 @@ body {
   padding: 0 1rem;
 }
 
+.subtitle {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  
+}
+
 
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .logo-wrapper {
@@ -43,15 +51,14 @@ body {
   .logo {
     max-width: 250px;
   }
-}
 
-.subtitle {
-  color: white;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
+  .subtitle {
+  display: none;
   
 }
+}
+
+
 
 .content {
   position: relative;
