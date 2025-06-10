@@ -27,17 +27,24 @@ body {
 
 .logo {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
   display: block;
   margin: 0 auto;
   padding: 0 1rem; /* Schutz links und rechts */
 }
 
+@media (max-width: 600px) {
+ .logo {
+  width: 100%;
+  max-width: 400px;
+}
+}
+
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .logo-wrapper {
     margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-bottom: 10vh;
   }
 
   .logo {
@@ -69,8 +76,7 @@ body {
   width: 100%;
   padding: 1.5rem 1rem;
   text-align: center;
-  /* background: rgba(0, 0, 0, 0.6); Optional: leicht transparenter Hintergrund */
-  backdrop-filter: blur(4px);     /* Optional: schöner Blur-Effekt */
+  backdrop-filter: blur(4px); 
   z-index: 20;
 }
 
