@@ -42,7 +42,13 @@ body {
 
   .logo {
     max-width: 250px;
+    text-align: center;
   }
+}
+
+.subtitle {
+  color: white;
+  
 }
 
 .content {
